@@ -1,17 +1,17 @@
-public class Zipcode {
+public class Zipcode extends ServiceCommunicator {
     private String zipcode;
     public Zipcode(String zipcode) {
         this.zipcode = zipcode;
     }
 
-
+    public void getZipcode() {
+        setURL("http://api.zippopotam.us/us/" + this.zipcode);
+        connect();
+        System.out.println(get());
+    }
 
     public static void main(String[] args) {
-        ServiceCommunicator sc = new ServiceCommunicator();
         Zipcode zipcodeObj = new Zipcode("92024");
-        sc.setURL("http://api.zippopotam.us/us/" + zipcodeObj.zipcode);
-        sc.connect();
-        System.out.println(sc.get());
-
+        zipcodeObj.getZipcode();;
     }
 }

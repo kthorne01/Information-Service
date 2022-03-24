@@ -9,7 +9,6 @@ public class Music {
         ServiceCommunicator sc = new ServiceCommunicator();
         Music music = new Music("outlander");
         sc.setURL("https://itunes.apple.com/search?term=" + music.music + "&limit=1");
-        // "https://itunes.apple.com/search?term=outlander&limit=1"
         sc.connect();
         System.out.println(sc.get());
     }
